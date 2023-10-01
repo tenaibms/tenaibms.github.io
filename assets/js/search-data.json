@@ -1,0 +1,149 @@
+{"0": {
+    "doc": "Barebones Playskin",
+    "title": "Preface",
+    "content": "This article will cover how to start creating a playskin from scratch. Textures will be provided but the reader is encouraged to use their own and to experiment with their own ideas. Barebones may imply minimal, but the reader will have a fully functioning playskin by the end of the article. The following elements will be implemented: . | Bombs | Guage/Lifebar | Hit Lighting | Judgements &amp; Combo | Judgeline | Lasers | Noteskin | . A preview of the skin can be located below: . ",
+    "url": "/docs/getting_started/barebones_play_skin.html#preface",
+    
+    "relUrl": "/docs/getting_started/barebones_play_skin.html#preface"
+  },"1": {
+    "doc": "Barebones Playskin",
+    "title": "Outlining",
+    "content": "Firstly, create a folder inside of LR2Files\\Theme\\. We will call our skin Barebones, so we should create the folder LR2Files\\Theme\\barebones\\. 📁LR2Files/ └── 📁Themes/ └── 📁barebones/ . Secondly we need to create a file inside of that folder with the .lr2skin extension. This extension is what LR2 looks for when searching the Themes directory. We will call ours barebones.lr2skin, though the name doesn’t have to match the directory name. 📁LR2Files/ └── 📁Themes/ └── 📁barebones/ └── 📝barebones.lr2skin . It is also a good idea to create directories for all of your customization options. Doing so allows you to much more easily manage each part of your skin. 📁LR2Files/ └── 📁Themes/ └── 📁barebones/ ├── 📁csv/ ├── 📁img/ │ ├── 📁bombs/ │ ├── 📁guage/ │ ├── 📁lasers/ │ ├── 📁notes/ │ ├── 📁judgeline/ │ ├── 📁judgements/ │ └── 📁lighting/ └── 📝barebones.lr2skin . ",
+    "url": "/docs/getting_started/barebones_play_skin.html#outlining",
+    
+    "relUrl": "/docs/getting_started/barebones_play_skin.html#outlining"
+  },"2": {
+    "doc": "Barebones Playskin",
+    "title": "Creating the .lr2skin file",
+    "content": "Inside of our .lr2skin file, we will use the #INFORMATION command to include some general metadata, as well as define options for customizing the skin. barebones.lr2skin . //#INFORMATION Type Title Author Thumbnail (optional) #INFORMATION,0,Barebones,Your Name //#CUSTOMOPTION Title DST_OP Label #CUSTOMOPTION,Side,920,1P,2P //#CUSTOMFILE Title path default #CUSTOMFILE,Note,LR2Files\\Theme\\barebones\\img\\notes\\*.png,default #ENDOFHEADER #IF,920 #INCLUDE,LR2Files\\Theme\\barebones\\csv\\1p.csv . Additionally, it would be prudent to create the csv files and textures. ",
+    "url": "/docs/getting_started/barebones_play_skin.html#creating-the-lr2skin-file",
+    
+    "relUrl": "/docs/getting_started/barebones_play_skin.html#creating-the-lr2skin-file"
+  },"3": {
+    "doc": "Barebones Playskin",
+    "title": "csv\\1p.csv",
+    "content": "#IMAGE LR2Files\\Theme\\barebones\\img\\notes\\*.png //0 //Measure Line (currently not defined to be anything, however lr2 will crash if this is not defined) //1P index = 0 //2P index = 1 //SRC (NULL) gr x y w h div_x div_y cycle timer #SRC_LINE 0 0 0 0 0 1 1 1 0 0 //DST (NULL) time x y w h acc a r g b blend filter angle center loop timer op1 op2 op3 #DST_LINE 0 0 0 0 0 0 0 255 255 255 255 0 0 0 0 0 0 0 0 0 #DST_LINE 0 0 0 0 0 0 0 255 255 255 255 0 0 0 0 . ",
+    "url": "/docs/getting_started/barebones_play_skin.html#csv1pcsv",
+    
+    "relUrl": "/docs/getting_started/barebones_play_skin.html#csv1pcsv"
+  },"4": {
+    "doc": "Barebones Playskin",
+    "title": "img\\notes\\default.png",
+    "content": "(Note textures from REMI-S AC) . Your file structure should look like this . 📁LR2Files/ └── 📁Themes/ └── 📁barebones/ ├── 📁csv/ ├── 📝1p.csv ├── 📁img/ │ ├── 📁bombs/ │ ├── 📁guage/ │ ├── 📁lasers/ │ ├── 📁notes/ │ │ └── 🖼️default.png │ ├── 📁judgeline/ │ ├── 📁judgements/ │ └── 📁lighting/ └── 📝barebones.lr2skin . Voila! our skin appears in the LR2 skin selector.\\ . ",
+    "url": "/docs/getting_started/barebones_play_skin.html#imgnotesdefaultpng",
+    
+    "relUrl": "/docs/getting_started/barebones_play_skin.html#imgnotesdefaultpng"
+  },"5": {
+    "doc": "Barebones Playskin",
+    "title": "Getting Notes to Display",
+    "content": "We’ll start by sourcing our normal notes. ",
+    "url": "/docs/getting_started/barebones_play_skin.html#getting-notes-to-display",
+    
+    "relUrl": "/docs/getting_started/barebones_play_skin.html#getting-notes-to-display"
+  },"6": {
+    "doc": "Barebones Playskin",
+    "title": "csv\\1p.csv",
+    "content": "[...] //Notes //Normal Notes //SRC_NOTE index gr x y w h div_x div_y cycle timer #SRC_NOTE 0 0 0 56 30 6 1 1 0 0 #SRC_NOTE 1 0 31 56 17 6 1 1 0 0 #SRC_NOTE 2 0 49 56 13 6 1 1 0 0 #SRC_NOTE 3 0 31 56 17 6 1 1 0 0 #SRC_NOTE 4 0 49 56 13 6 1 1 0 0 #SRC_NOTE 5 0 31 56 17 6 1 1 0 0 #SRC_NOTE 6 0 49 56 13 6 1 1 0 0 #SRC_NOTE 7 0 31 56 17 6 1 1 0 0 . Similarly, we will define the our long notes. ",
+    "url": "/docs/getting_started/barebones_play_skin.html#csv1pcsv-1",
+    
+    "relUrl": "/docs/getting_started/barebones_play_skin.html#csv1pcsv-1"
+  },"7": {
+    "doc": "Barebones Playskin",
+    "title": "csv\\1p.csv",
+    "content": "//Long Note Tail #SRC_LN_END 0 0 0 80 30 13 1 1 0 0 #SRC_LN_END 1 0 31 80 17 13 1 1 0 0 #SRC_LN_END 2 0 49 80 13 13 1 1 0 0 #SRC_LN_END 3 0 31 80 17 13 1 1 0 0 #SRC_LN_END 4 0 49 80 13 13 1 1 0 0 #SRC_LN_END 5 0 31 80 17 13 1 1 0 0 #SRC_LN_END 6 0 49 80 13 13 1 1 0 0 #SRC_LN_END 7 0 31 80 17 13 1 1 0 0 //Long Note Body #SRC_LN_BODY 0 0 0 1 30 48 1 1 0 0 #SRC_LN_BODY 1 0 31 1 17 48 1 1 0 0 #SRC_LN_BODY 2 0 49 1 13 48 1 1 0 0 #SRC_LN_BODY 3 0 31 1 17 48 1 1 0 0 #SRC_LN_BODY 4 0 49 1 13 48 1 1 0 0 #SRC_LN_BODY 5 0 31 1 17 48 1 1 0 0 #SRC_LN_BODY 6 0 49 1 13 48 1 1 0 0 #SRC_LN_BODY 7 0 31 1 17 48 1 1 0 0 //Long Note Head #SRC_LN_START 0 0 0 94 30 13 1 1 0 0 #SRC_LN_START 1 0 31 94 17 13 1 1 0 0 #SRC_LN_START 2 0 49 94 13 13 1 1 0 0 #SRC_LN_START 3 0 31 94 17 13 1 1 0 0 #SRC_LN_START 4 0 49 94 13 13 1 1 0 0 #SRC_LN_START 5 0 31 94 17 13 1 1 0 0 #SRC_LN_START 6 0 49 94 13 13 1 1 0 0 #SRC_LN_START 7 0 31 94 17 13 1 1 0 0 . We will do the same for mines. ",
+    "url": "/docs/getting_started/barebones_play_skin.html#csv1pcsv-2",
+    
+    "relUrl": "/docs/getting_started/barebones_play_skin.html#csv1pcsv-2"
+  },"8": {
+    "doc": "Barebones Playskin",
+    "title": "csv\\1p.csv",
+    "content": "//Mine #SRC_MINE 0 0 0 68 30 6 1 1 0 0 #SRC_MINE 1 0 31 68 17 6 1 1 0 0 #SRC_MINE 2 0 49 68 13 6 1 1 0 0 #SRC_MINE 3 0 31 68 17 6 1 1 0 0 #SRC_MINE 4 0 49 68 13 6 1 1 0 0 #SRC_MINE 5 0 31 68 17 6 1 1 0 0 #SRC_MINE 6 0 49 68 13 6 1 1 0 0 #SRC_MINE 7 0 31 68 17 6 1 1 0 0 . And lastly we will repeat this all once more for autoscratch. ",
+    "url": "/docs/getting_started/barebones_play_skin.html#csv1pcsv-3",
+    
+    "relUrl": "/docs/getting_started/barebones_play_skin.html#csv1pcsv-3"
+  },"9": {
+    "doc": "Barebones Playskin",
+    "title": "csv\\1p.csv",
+    "content": "// Auto Scratch // Normal Notes //SRR_NOTES index gr x y w h div_x div_y cycle timer #SRC_AUTO_NOTE 0 0 63 56 30 6 1 1 0 0 // Long Note Tail #SRC_AUTO_LN_END 0 0 63 80 30 13 1 1 0 0 //Long Note Body #SRC_AUTO_LN_BODY 0 0 63 1 30 48 1 1 0 0 //Long Note Head #SRC_AUTO_LN_START 0 0 63 94 30 13 1 1 0 0 //Mine #SRC_MINE 0 0 63 68 30 6 1 1 0 0 . After that, we will go ahead and define the positions our notes are drawn at . // Note Positions //DST_NOTE index time x y w h acc a r g b blend filter angle center loop timer op1 op2 op3 #DST_NOTE 0 0 100 400 30 6 0 255 255 255 255 0 0 0 0 0 0 0 0 0 #DST_NOTE 1 0 130 400 17 6 0 255 255 255 255 0 0 0 0 0 0 0 0 0 #DST_NOTE 2 0 147 400 13 6 0 255 255 255 255 0 0 0 0 0 0 0 0 0 #DST_NOTE 3 0 160 400 17 6 0 255 255 255 255 0 0 0 0 0 0 0 0 0 #DST_NOTE 4 0 177 400 13 6 0 255 255 255 255 0 0 0 0 0 0 0 0 0 #DST_NOTE 5 0 190 400 17 6 0 255 255 255 255 0 0 0 0 0 0 0 0 0 #DST_NOTE 6 0 207 400 13 6 0 255 255 255 255 0 0 0 0 0 0 0 0 0 #DST_NOTE 7 0 220 400 17 6 0 255 255 255 255 0 0 0 0 0 0 0 0 0 . We now have notes drawn to the screen! . ",
+    "url": "/docs/getting_started/barebones_play_skin.html#csv1pcsv-4",
+    
+    "relUrl": "/docs/getting_started/barebones_play_skin.html#csv1pcsv-4"
+  },"10": {
+    "doc": "Barebones Playskin",
+    "title": "Barebones Playskin",
+    "content": " ",
+    "url": "/docs/getting_started/barebones_play_skin.html",
+    
+    "relUrl": "/docs/getting_started/barebones_play_skin.html"
+  },"11": {
+    "doc": "Basic Skinning Syntax",
+    "title": "Basic Syntax",
+    "content": "LR2 skins have a very simple syntax. Every word with # in front of it is a command. Everything with // in front of it is a comment. Commands are usually written in all caps, but this is not a strictly enforced rule, rather just a convention. // Comment #COMMAND // Valid #command // Also valid but less preferred . Every command has a certain number of properties which can be delimited using either tabs or commas. The first property of a command typically is just null, and should just be left as zero. This is a quirk that you’ll have to remember. All snippets on this website will use tabs rather than commas for ease of reading, however you should either set up your csv editor to export as commas or replace the tabs with commas in a text editor. // Tabs #COMMAND 0 1 2 3 4 5 // Commas #COMMAND,0,1,2,3,4,5 . Commands are usually written with their properties written above as a reminder, like so. //#COMMAND (NULL) prop1 prop2 prop3 prop4 prop5 #COMMAND 0 1 2 3 4 5 . The majority of skinning commands involve drawing images to the screen. Commands that begin with SRC refer to the source of an image, and commands that begin with DST refer to the destintation an image. For example, this is a simplified version of the image drawing command: . //SRC_IMAGE (NULL) gr x y w h #SRC_IMAGE 0 0 0 0 0 0 //DST_IMAGE (NULL) time x y w h #DST_IMAGE 0 0 0 0 0 0 . For more information about those commands, please see #SRC_IMAGE and #DST_IMAGE respectively. ",
+    "url": "/docs/getting_started/basic_synatx.html#basic-syntax",
+    
+    "relUrl": "/docs/getting_started/basic_synatx.html#basic-syntax"
+  },"12": {
+    "doc": "Basic Skinning Syntax",
+    "title": "Basic Skinning Syntax",
+    "content": " ",
+    "url": "/docs/getting_started/basic_synatx.html",
+    
+    "relUrl": "/docs/getting_started/basic_synatx.html"
+  },"13": {
+    "doc": "#DST_IMAGE",
+    "title": "#DST_IMAGE",
+    "content": " ",
+    "url": "/docs/commands/dst_image.html",
+    
+    "relUrl": "/docs/commands/dst_image.html"
+  },"14": {
+    "doc": "#IMAGE",
+    "title": "#IMAGE",
+    "content": " ",
+    "url": "/docs/commands/image.html",
+    
+    "relUrl": "/docs/commands/image.html"
+  },"15": {
+    "doc": "Commands",
+    "title": "Commands",
+    "content": " ",
+    "url": "/docs/commands/",
+    
+    "relUrl": "/docs/commands/"
+  },"16": {
+    "doc": "Getting Started",
+    "title": "Getting Started",
+    "content": " ",
+    "url": "/docs/getting_started/",
+    
+    "relUrl": "/docs/getting_started/"
+  },"17": {
+    "doc": "Property Quirks",
+    "title": "Property Quirks",
+    "content": " ",
+    "url": "/docs/properties/",
+    
+    "relUrl": "/docs/properties/"
+  },"18": {
+    "doc": "Home",
+    "title": "Welcome!",
+    "content": " ",
+    "url": "/#welcome",
+    
+    "relUrl": "/#welcome"
+  },"19": {
+    "doc": "Home",
+    "title": "Home",
+    "content": " ",
+    "url": "/",
+    
+    "relUrl": "/"
+  },"20": {
+    "doc": "#SRC_IMAGE",
+    "title": "#SRC_IMAGE",
+    "content": "| : Property Name : | : Description : | |   | . | gr | : Specifies which image index to use. See [#IMAGE](/docs/commands/image.html) :| |   | . | x | Specifies the x-coordinate to start at. | ![xywh](assets/xywh.png) | . | y | Specifies the y-coordinate to start at. | ^^ | . | w | Specifies the width of the image | ^^ | . | h | Specifies the height of the image. | ^^ | . | div_x | Specifies the number of times to divide the image horizontally | ![div](assets/div.png) | . | div_y | Specifies the number of times to divide the image vertically | ^^ | . ",
+    "url": "/docs/commands/src_image.html",
+    
+    "relUrl": "/docs/commands/src_image.html"
+  }
+}
